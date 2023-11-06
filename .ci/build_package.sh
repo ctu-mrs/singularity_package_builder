@@ -23,7 +23,8 @@ sudo apt-get install -y \
     pkg-config \
     git \
     cryptsetup \
-    libglib2.0-dev
+    libglib2.0-dev \
+    libfuse3-dev
 
 echo "$0: building the package into '$ARTIFACTS_FOLDER'"
 
