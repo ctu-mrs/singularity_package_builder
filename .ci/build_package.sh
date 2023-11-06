@@ -12,7 +12,18 @@ ARTIFACTS_FOLDER=$2
 
 sudo apt-get -y install dpkg-dev
 
-sudo apt-get -y install libseccomp2 libseccomp-dev
+sudo apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    wget \
+    pkg-config \
+    git \
+    cryptsetup \
+    libglib2.0-dev
 
 echo "$0: building the package into '$ARTIFACTS_FOLDER'"
 
