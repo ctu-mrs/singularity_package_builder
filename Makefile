@@ -1,12 +1,12 @@
 
-SINGULARITY_VERSION=3.8.5
-GO_VERSION=1.17.2
+SINGULARITY_VERSION=4.0.1
+GO_VERSION=1.21.3
 PKG_VERSION=1
 PKG_NAME=singularity-container_${SINGULARITY_VERSION}-${PKG_VERSION}
-MAINTAINER=Anonymous <anon@example.com>
+MAINTAINER=Tomas Baca <klaxalk@gmail.com>
 
 GO_TAR_FILE=go${GO_VERSION}.linux-amd64.tar.gz
-SINGULARITY_TAR_FILE=singularity-${SINGULARITY_VERSION}.tar.gz
+SINGULARITY_TAR_FILE=singularity-ce-${SINGULARITY_VERSION}.tar.gz
 
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 BUILD_DIR=${ROOT_DIR}/build
@@ -22,7 +22,7 @@ ${BUILD_DIR}/go: | ${BUILD_DIR}
 
 
 ${BUILD_DIR}/${SINGULARITY_TAR_FILE}:
-	cd ${BUILD_DIR}; wget "https://github.com/apptainer/singularity/releases/download/v${SINGULARITY_VERSION}/${SINGULARITY_TAR_FILE}"
+	cd ${BUILD_DIR}; wget "https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/${SINGULARITY_TAR_FILE}"
 
 
 ${BUILD_DIR}/singularity: ${BUILD_DIR}/go ${BUILD_DIR}/${SINGULARITY_TAR_FILE}
