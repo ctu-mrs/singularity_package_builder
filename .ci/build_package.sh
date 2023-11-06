@@ -12,6 +12,8 @@ ARTIFACTS_FOLDER=$2
 
 sudo apt-get -y install dpkg-dev
 
+sudo apt-get -y install libseccomp2 libseccomp-dev
+
 echo "$0: building the package into '$ARTIFACTS_FOLDER'"
 
 mkdir -p $ARTIFACTS_FOLDER
